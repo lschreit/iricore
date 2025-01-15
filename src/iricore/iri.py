@@ -90,6 +90,8 @@ def iri(dt: datetime, altrange: Annotated[Sequence[float], 3], lat: float | Sequ
     indices_uptodate(dt)
     lat = np.atleast_1d(np.asarray(lat))
     lon = np.atleast_1d(np.asarray(lon))
+    if isinstance(altrange,float):
+        altrange=[altrange,altrange+0.1,1]
     if not len(lat) == len(lon):
         raise ValueError("Lengths of latitude and longitude arrays must be equal.")
 
