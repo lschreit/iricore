@@ -42,9 +42,10 @@ c
 c ----------------------------------------------------------------
 c CHANGES:
 c-Version-MM/DD/YY-Description (person reporting correction)
-c 2020.10 04/30/22 added subroutine arguments to incop. into IRI
+c 2020.10 04/30/22 added subroutine arguments to incop. into IRI 
 c 2020.10 04/30/22 deleted blanks in main data statement 
 c 2020.10 04/30/22 included fjrocdata.h in vfjmodelrocstart  
+c 2020.11 11/20/24 add line 'xgglon=gglon' [A. Maute]
 c
 c ----------------------------------------------------------------
 
@@ -67,6 +68,7 @@ c-------------------------------------------------------------c
      &    19.75, 20.00, 20.25, 20.50, 20.75, 21.00, 21.25, 21.50, 21.75,
      &        22.00, 22.50, 23.00, 23.50, 24.00 /
 
+          xgglon = gglon
 	  if( xgglon.gt.180. )  xgglon= xgglon - 360.
 	  xtl= ttl
 	  if( xtl.lt.0.  )  xtl= xtl+24.
