@@ -118,6 +118,8 @@ def get_jf(preset: str = 'default') -> np.ndarray:
     | 42         | B0 from model                 | B0 user input in OARR(9)             | True    |      |
     +------------+-------------------------------+--------------------------------------+---------+------+
     | 43         | B1 from model                 | B1 user input in OARR(34)            | True    |      |
+    +------------+-------------------------------+--------------------------------------+---------+------+                                                                                                                                                                   
+    | 43         | Sporadic E                    |                                      | True    |      |   
     +------------+-------------------------------+--------------------------------------+---------+------+
     | 46         | CGM computation on            | CGM computation off                  | False   |  ✓   |
     +------------+-------------------------------+--------------------------------------+---------+------+
@@ -132,9 +134,9 @@ def get_jf(preset: str = 'default') -> np.ndarray:
     # TODO: finish this function
     jf = np.ones(50, dtype=np.int32, order="F")
     if preset == 'default_edens':
-        jf_ind = [1, 2, 3, 4, 5, 20, 22, 27, 28, 29, 32, 33, 34, 38, 39, 46]
+        jf_ind = [1, 2, 3, 4, 5, 20, 22, 27, 28, 29, 32, 33, 34, 38, 39, 44, 46]
     elif preset == 'default':
-        jf_ind = [3, 4, 5, 20, 22, 27, 28, 29, 32, 33, 34, 38, 39, 46]
+        jf_ind = [3, 4, 5, 20, 22, 27, 28, 29, 32, 33, 34, 38, 39, 44, 46]
     else:
         raise ValueError(f"JF preset {preset} is not defined.")
     jf[jf_ind] = 0
